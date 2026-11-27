@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3b0a14">
+<title>Abhishek & Ayushi – Wedding Invitation</title>
+<meta property="og:title" content="Abhishek & Ayushi are getting married!">
+<meta property="og:description" content="11 December 2026 · Etah, Uttar Pradesh. Open your invitation.">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--m:#3b0a14;--m2:#5e1220;--g:#e0b552;--o:#f29f05;--iv:#fff6e3;--ink:#4a1420;--rose:#c2415a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--iv);color:var(--ink);font:17px/1.6 "Mukta",sans-serif;text-align:center;overflow-x:hidden}
+h1,h2,h3{font-family:"Rozha One",serif;font-weight:400;margin:0}
+button{font:inherit}
+#intro{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 40%,#6b1626,#2a060e);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:env(safe-area-inset-top,0) 20px env(safe-area-inset-bottom,0);color:var(--iv);transition:opacity .8s,visibility .8s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro h2{font-size:34px;color:var(--g)}
+#intro p{margin:0;color:#e9cf93;font-size:15px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+.env{position:relative;width:min(300px,78vw);height:200px;background:#8b2133;border:0;padding:0;border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.55),0 0 60px rgba(242,159,5,.25);cursor:pointer;margin-top:70px}
+.letter{position:absolute;left:8%;width:84%;top:10px;height:180px;background:var(--iv);border-radius:3px;z-index:1;transition:transform .9s .5s;padding-top:14px;font:24px "Rozha One",serif;color:var(--ink)}
+.pocket{position:absolute;inset:0;z-index:2;background:#a22b40;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:4px}
+.flap{position:absolute;top:0;left:0;width:100%;height:115px;background:var(--m2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:3;transition:transform .8s}
+.seal{position:absolute;left:50%;top:84px;width:48px;height:48px;margin-left:-24px;border-radius:50%;background:var(--g);color:var(--ink);z-index:4;display:flex;align-items:center;justify-content:center;font:16px "Rozha One",serif;box-shadow:0 2px 8px rgba(0,0,0,.5);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.env.open .flap{transform:rotateX(180deg);z-index:0}
+.env.open .seal{opacity:0;animation:none}
+.env.open .letter{transform:translateY(-95px)}
+#main{display:none}
+#main.show{display:block;animation:fade 1s}
+@keyframes fade{from{opacity:0}}
+.mu{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;z-index:40;width:44px;height:44px;border-radius:50%;border:1px solid var(--g);background:rgba(59,10,20,.85);color:var(--g);font-size:20px;cursor:pointer}
+.hero{position:relative;background:radial-gradient(ellipse at 50% 0,#7a1a2e,var(--m) 70%);color:var(--iv);padding:calc(env(safe-area-inset-top,0px) + 120px) 20px 70px;overflow:hidden}
+.toran{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-around;padding-top:env(safe-area-inset-top,0)}
+.toran i{display:block;width:2px;background:var(--g);transform-origin:top;animation:sway 2.6s ease-in-out infinite alternate;position:relative}
+.toran i::after{content:"";position:absolute;bottom:-16px;left:-11px;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle,#ffd166 0 22%,var(--o) 23% 58%,#e2630f 59%);box-shadow:0 0 12px rgba(242,159,5,.6)}
+@keyframes sway{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.bless{color:var(--g);font-size:15px;margin:0}
+.sub{color:#e9cf93;margin:6px 0 22px;font-size:15px}
+.nm{display:block;font-size:clamp(52px,16vw,88px);line-height:1.05;color:var(--g);text-shadow:0 4px 0 rgba(0,0,0,.35)}
+.nm span{display:inline-block;animation:drop .7s both cubic-bezier(.3,1.6,.5,1)}
+@keyframes drop{from{opacity:0;transform:translateY(-60px) scale(.5)}}
+.heart{display:block;font-size:34px;color:var(--rose);margin:4px 0;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.3)}}
+.date{display:inline-block;margin-top:26px;padding:8px 22px;border:2px dashed var(--g);border-radius:40px;font:24px "Rozha One",serif;color:var(--iv);transform:rotate(-2deg)}
+.count{display:flex;justify-content:center;gap:10px;margin-top:28px}
+.count div{background:rgba(255,246,227,.08);border:1px solid rgba(224,181,82,.5);border-radius:10px;min-width:68px;padding:8px 4px}
+.count b{display:block;font:30px/1.1 "Rozha One",serif;color:var(--g)}
+.count span{font-size:13px;color:#e9cf93}
+section{padding:60px 20px;max-width:600px;margin:0 auto}
+section h2{font-size:34px;margin-bottom:26px;color:var(--m2)}
+.tl{position:relative;text-align:left}
+.tl::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:repeating-linear-gradient(var(--o) 0 8px,transparent 8px 14px)}
+.ev{position:relative;display:flex;gap:16px;margin-bottom:22px}
+.ic{flex:none;width:56px;height:56px;border-radius:50%;background:var(--m);border:3px solid var(--o);display:flex;align-items:center;justify-content:center;font-size:26px;z-index:1}
+.ev:hover .ic{transform:rotate(-12deg) scale(1.1)}
+.ic{transition:transform .25s}
+.ev>div:last-child{background:#fff;border:1px solid #ecd49a;border-radius:12px;padding:12px 16px;flex:1;box-shadow:4px 4px 0 var(--g)}
+.ev h3{font-size:22px;color:var(--m2)}
+.when{margin:0;color:var(--rose);font-weight:600;font-size:15px}
+.ev p{margin:2px 0 0;font-size:15px}
+.horse{display:inline-block;animation:trot 5s linear infinite}
+@keyframes trot{0%{transform:translateX(-14px)}50%{transform:translateX(14px) scaleX(1)}100%{transform:translateX(-14px)}}
+.dark{max-width:none;background:var(--m);color:var(--iv)}
+.dark>div{max-width:600px;margin:0 auto}
+.dark h2{color:var(--g)}
+.dark p{margin:4px 0}
+.btn{display:inline-block;margin:8px 5px 0;padding:12px 22px;border:2px solid var(--g);border-radius:40px;background:transparent;color:var(--iv);font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover,.btn:active{transform:scale(1.07) rotate(-1deg);background:rgba(224,181,82,.2)}
+.btn.fill{background:var(--g);color:var(--ink)}
+.btn.inv{color:var(--ink);border-color:var(--m2)}
+.btn:focus-visible,.mu:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.poem{font:italic 24px/1.45 "Rozha One",serif;color:var(--m2);margin:0 0 14px}
+.kids{background:#fff;border:2px dashed var(--o);border-radius:14px;padding:22px 16px}
+.fam{background:#fff;border:1px solid #ecd49a;border-radius:12px;padding:16px;margin:0 0 16px;font-size:15px;box-shadow:4px 4px 0 var(--g)}
+.fam h3{font-size:24px;color:var(--rose);margin-bottom:4px}
+.hosts p{margin:0 0 14px;font-size:15px}.hosts b{display:block;font-family:"Rozha One",serif;font-weight:400;color:var(--g);font-size:18px}
+.tag{color:var(--g);font:20px "Rozha One",serif;margin-top:26px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.petal{position:fixed;top:-24px;z-index:60;width:10px;height:14px;border-radius:50% 0 50% 50%;pointer-events:none;animation:fall linear forwards}
+.petal.b{animation:none}
+@keyframes fall{to{transform:translate3d(var(--dx),112vh,0) rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="intro">
+<h2>You’re invited!</h2>
+<button class="env" id="env" aria-label="Open the invitation"><div class="letter">&nbsp;A &amp; A</div><div class="pocket"></div><div class="flap"></div><div class="seal">A&amp;A</div></button>
+<p>Tap the seal to open</p>
+</div>
+
+<div id="main">
+<button class="mu" id="mu" aria-label="Turn music on or off">🔊</button>
+<header class="hero">
+<div class="toran" id="toran"></div>
+<p class="bless">॥ Shree Ganeshaya Namah ॥</p>
+<p class="sub">With the boundless blessings of the Almighty</p>
+<span class="nm">Abhishek</span>
+<span class="heart">♥</span>
+<span class="nm">Ayushi</span>
+<p class="sub" style="margin-top:20px">Pavitra Soot Bandhan, the sacred wedding bond</p>
+<div class="date">11 December 2026</div>
+<div class="count" id="count"></div>
+</header>
+
+<section>
+<h2 class="rv">The celebrations</h2>
+<div class="tl" id="ev"></div>
+</section>
+
+<section class="dark"><div class="rv">
+<h2>Come celebrate with us</h2>
+<p style="font:24px 'Rozha One',serif">Aaradhya Marriage Home</p>
+<p>Near FCI Godown, Nidholi Road, Etah (U.P.)</p>
+<p style="color:#e9cf93;font-size:15px">Reception dinner · Friday, 11 December · 6:00 PM</p>
+<a class="btn fill" href="https://www.google.com/maps/search/?api=1&query=Aaradhya+Marriage+Home+Nidholi+Road+Etah" target="_blank" rel="noopener">Open in Maps</a>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Aaradhya+Marriage+Home+Nidholi+Road+Etah" target="_blank" rel="noopener">Get directions</a><br>
+<a class="btn" href="invite.ics" download="Abhishek-Ayushi-Wedding.ics">Add to calendar</a>
+<a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhishek+%26+Ayushi+Wedding&dates=20261211T103000Z/20261211T183000Z&location=Aaradhya+Marriage+Home,+Nidholi+Road,+Etah" target="_blank" rel="noopener">Google Calendar</a>
+</div></section>
+
+<section>
+<div class="kids rv">
+<h2 style="font-size:26px;margin-bottom:14px">A note from the little ones</h2>
+<p class="poem">No complaints and no excuses will do,<br>for our joy is incomplete without you.</p>
+<p style="margin:0;font-size:15px">With love from Radhe, Riddhi, Raghav, Avani, Shaurya, Vaishnavi and Shiva 🎈</p>
+</div>
+</section>
+
+<section style="padding-top:0">
+<h2 class="rv">The families</h2>
+<div class="fam rv"><h3>Abhishek Chauhan</h3>Grandson of late Smt. Rammurti Devi and Shri Mahipal Singh Chauhan<br>Son of Smt. Pinki Chauhan and Shri Dharmendra Singh Chauhan (Kallu)<br>House No. 161, Shanti Nagar, Etah</div>
+<div class="fam rv"><h3>Ayushi Rathore</h3>Granddaughter of late Smt. Rajvati Devi and late Shri Ram Singh Rathore<br>Daughter of Smt. Archana Rathore and Shri Satyaveer Singh Rathore<br>Civil Lines, Etah</div>
+</section>
+
+<section class="dark"><div class="hosts rv">
+<p><b>With warm welcome</b>Smt. Shweta &amp; Shri Mohit Chauhan<br>Smt. Shivani &amp; Shri Avanendra Singh<br>Arpita Chauhan</p>
+<p><b>With humble regards</b>Virendra Singh, Yogendra Singh<br>Satendra Singh (former Pradhan), Sanjay Singh</p>
+<p><b>Eagerly awaiting you</b>Sunil Chauhan, Ajit Chauhan, Bablu Chauhan, Rajkamal Tomar and the entire Chauhan family</p>
+<p style="margin-top:24px">Please treat this invitation as a personal one. We would be honoured by your presence and blessings.</p>
+<button class="btn fill" id="party">🎉 Celebrate!</button>
+<button class="btn" id="share">Share on WhatsApp</button>
+<p class="tag">#AbhishekWedsAyushi</p>
+</div></section>
+</div>
+
+<script>
+const $=i=>document.getElementById(i);
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const cols=['#e8892b','#f2b84b','#c2415a','#ffd166'];
+const E=[['<span class="horse">🐎</span>','Baraat departure','Friday, 11 December','4:00 PM','The groom’s procession sets off in the afternoon.'],
+['🍽️','Reception dinner','Friday, 11 December','6:00 PM','Aaradhya Marriage Home, near FCI Godown, Nidholi Road, Etah.'],
+['🔥','Wedding ceremony','Friday, 11 December','Night','Paanigrahan Sanskar, the sacred vows.'],
+['🏡','Bride’s welcome','Saturday, 12 December','Morning','Vadhu Aagman, welcoming the bride home.']];
+$('ev').innerHTML=E.map(e=>`<div class="ev rv"><div class="ic">${e[0]}</div><div><h3>${e[1]}</h3><p class="when">${e[2]} · ${e[3]}</p><p>${e[4]}</p></div></div>`).join('');
+document.querySelectorAll('.nm').forEach(el=>{el.innerHTML=[...el.textContent].map((c,i)=>`<span style="animation-delay:${.3+i*.08}s">${c}</span>`).join('')});
+$('toran').innerHTML=Array.from({length:12},(_,i)=>`<i style="height:${28+(i%3)*22}px;animation-delay:${(i%4)*.35}s"></i>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const T=new Date('2026-12-11T16:00:00+05:30').getTime();
+function tick(){const d=T-Date.now(),el=$('count');
+if(d<=0){el.innerHTML='<p style="font:24px \'Rozha One\',serif;color:#e0b552;margin:0">The celebrations have begun!</p>';return}
+const s=Math.floor(d/1000),v=[['Days',Math.floor(s/86400)],['Hours',Math.floor(s%86400/3600)],['Mins',Math.floor(s%3600/60)],['Secs',s%60]];
+el.innerHTML=v.map(x=>`<div><b>${x[1]}</b><span>${x[0]}</span></div>`).join('')}
+tick();setInterval(tick,1000);
+function rain(n){if(still)return;for(let i=0;i<n;i++){const p=document.createElement('span');p.className='petal';
+p.style.cssText=`left:${Math.random()*100}vw;background:${cols[i%4]};--dx:${Math.random()*160-80}px;animation-duration:${4+Math.random()*4}s;animation-delay:${Math.random()*1.5}s`;
+document.body.appendChild(p);setTimeout(()=>p.remove(),10500)}}
+function burst(x,y){if(still)return;for(let i=0;i<10;i++){const p=document.createElement('span');p.className='petal b';
+p.style.cssText=`left:${x}px;top:${y}px;background:${cols[i%4]}`;document.body.appendChild(p);
+const a=Math.random()*6.28,d=50+Math.random()*80;
+p.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d+40}px) rotate(${Math.random()*540}deg) scale(.6)`,opacity:0}],{duration:900,easing:'ease-out'}).onfinish=()=>p.remove()}}
+addEventListener('pointerdown',e=>{if($('main').classList.contains('show'))burst(e.clientX,e.clientY)});
+/* music: uses music.mp3 if you add one, otherwise plays a built-in shehnai-style tune */
+let hasFile=false,mode='',on=false,ac,master,nt,k=0;
+fetch('music.mp3',{method:'HEAD'}).then(r=>{hasFile=r.ok}).catch(()=>{});
+const au=new Audio('music.mp3');au.loop=true;
+function note(f,t,d){const o=ac.createOscillator(),g=ac.createGain(),b=ac.createBiquadFilter(),l=ac.createOscillator(),lg=ac.createGain();
+o.type='sawtooth';o.frequency.value=f;b.type='bandpass';b.frequency.value=f*3;b.Q.value=2;
+l.frequency.value=5.5;lg.gain.value=f*.012;l.connect(lg);lg.connect(o.frequency);
+g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.15,t+.06);g.gain.exponentialRampToValueAtTime(.001,t+d);
+o.connect(b);b.connect(g);g.connect(master);o.start(t);l.start(t);o.stop(t+d+.1);l.stop(t+d+.1)}
+function kick(t,s){const o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(50,t+.15);
+g.gain.setValueAtTime(s?.35:.18,t);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.connect(g);g.connect(master);o.start(t);o.stop(t+.3)}
+function synth(){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.55;master.connect(ac.destination);
+[130.81,196,261.63].forEach(f=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;g.gain.value=.06;o.connect(g);g.connect(master);o.start()});
+const R=[1,9/8,5/4,3/2,5/3,2],P=[[2,1],[1,1],[0,1],[1,1],[2,2],[3,1],[2,1],[1,1],[0,2],[1,1],[2,1],[3,1],[4,1],[3,2],[2,1],[1,1],[2,1],[0,3],[3,1],[4,1],[5,2],[4,1],[3,1],[2,2]],B=.42;
+nt=ac.currentTime+.3;
+const pump=()=>{while(nt<ac.currentTime+3){const[d,l]=P[k%P.length];note(261.63*R[d],nt,l*B);for(let j=0;j<l;j++)kick(nt+j*B,j==0);nt+=l*B;k++}};
+pump();setInterval(pump,1000)}
+function startMusic(){if(hasFile){mode='f';au.play().catch(()=>{})}else{mode='s';synth()}on=true;$('mu').textContent='🔊'}
+$('mu').addEventListener('click',()=>{if(on){mode==='f'?au.pause():ac.suspend();on=false}else{mode==='f'?au.play():ac.resume();on=true}$('mu').textContent=on?'🔊':'🔇'});
+$('env').addEventListener('click',function(){this.classList.add('open');startMusic();
+setTimeout(()=>{$('intro').classList.add('gone');$('main').classList.add('show');scrollTo(0,0);rain(40)},still?100:1700)});
+$('party').addEventListener('click',()=>{rain(90);burst(innerWidth/2,innerHeight/2)});
+$('share').addEventListener('click',()=>{window.open('https://wa.me/?text='+encodeURIComponent('You’re warmly invited to the wedding of Abhishek & Ayushi, 11 December 2026, Etah. Open your invitation: '+location.href.split('#')[0]),'_blank','noopener')});
+</script>
+</body>
+</html>
